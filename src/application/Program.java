@@ -1,6 +1,7 @@
 package application;
 
-import java.util.Iterator;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 
 import entities.Department;
@@ -32,6 +33,12 @@ public class Program {
 		for (Seller itemSeller : listAllSeller) {
 			System.out.println(itemSeller + "\n");
 		}
+		
+		System.out.println("\n--- TEST 4: Seller insert ---\n");
+		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", LocalDate.of(2000, Month.APRIL, 2), 3000.0, department);
+		
+		sellerDao.insert(newSeller);
+		System.out.println("Inserted! New id = " + newSeller.getId());
 	}
 
 }
